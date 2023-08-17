@@ -9,7 +9,7 @@ def internal_angles(sides):
 # given side length and regular polygon
 def regular_polygon_area(sides, side_length):
     apothem = side_length/(2*math.tan(math.pi/sides))
-    return (sides * side_length * apothem / 2, 'sl apothem', 'apothem=l/(2tan(pi/s))')
+    return (sides * side_length * apothem / 2, 's l apothem', 'apothem=l/(2tan(pi/s))')
 
 def polygon_side_from_radius(sides, radius):
     return (2 * radius * math.sin(math.pi/sides), '2r sin(pi/s)')
