@@ -22,8 +22,8 @@ def print_result(r):
     input('=' + str(r[0]))
 
 while 1:
-    print('1 s> internal angle sum')
-    print('2 s> internal angles')
+    print('1 s> intr angle sum')
+    print('2 s> intr angles')
     print('3 s,l> area')
     print('4 s,r> side length')
     print('5 s,a> side length')
@@ -50,3 +50,6 @@ while 1:
         s = int(input('sides: '))
         a = int(input('apothem: '))
         print_result(polygon_side_from_apothem(s, a))
+
+    else:
+        print('invalid mode')
