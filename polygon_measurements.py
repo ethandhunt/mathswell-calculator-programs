@@ -9,13 +9,13 @@ def internal_angles(sides):
 # given side length and regular polygon
 def regular_polygon_area(sides, side_length):
     apothem = side_length/(2*math.tan(math.pi/sides))
-    return (sides * side_length * apothem / 2, 's*l*apothem', 'apothem=l/(2*tan(pi/s))')
+    return (sides * side_length * apothem / 2, 'sl apothem', 'apothem=l/(2tan(pi/s))')
 
 def polygon_side_from_radius(sides, radius):
-    return (2 * radius * math.sin(math.pi/sides), '2*r*sin(pi/s)')
+    return (2 * radius * math.sin(math.pi/sides), '2r sin(pi/s)')
 
 def polygon_side_from_apothem(sides, apothem):
-    return (2 * apothem * math.tan(math.pi/sides), '2*apothem*tan(pi/s)')
+    return (2 * apothem * math.tan(math.pi/sides), '2 apothem tan(pi/s)')
 
 def print_result(r):
     print('\n'.join(r[1:]))
@@ -43,10 +43,10 @@ while 1:
     
     elif mode == '4':
         s = int(input('sides: '))
-        r = float(input('radius'))
+        r = float(input('radius: '))
         print_result(polygon_side_from_radius(s, r))
     
     elif mode == '5':
-        s = int(input('sides'))
-        a = int(input('apothem'))
+        s = int(input('sides: '))
+        a = int(input('apothem: '))
         print_result(polygon_side_from_apothem(s, a))
