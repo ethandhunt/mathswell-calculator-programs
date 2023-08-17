@@ -1,0 +1,1 @@
+rm /run/media/ethan/disk/mathswell/*.py; cp *.py /run/media/ethan/disk/mathswell/; gpio -e /run/media/ethan/disk/
