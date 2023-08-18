@@ -50,8 +50,8 @@ while 1:
         H = 6 # total vertical lines is 7
         for x in range(len(f)//H+1):
             print('\n'.join(map(lambda x:str(x), f[H*x:H*x+H])))
-            if x < len(f)//H:
+            if x < len(f)//H-1:
                 input(':')
                 
         if len(f) % 7 != 0:
-            input()
+            input('.')
