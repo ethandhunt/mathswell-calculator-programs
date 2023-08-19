@@ -31,7 +31,7 @@ def permutations(n_input):
 
 
 while 1:
-    print('1 <eval>,n> list')
+    print('1 <eval>(x),n> list')
     print('2 k,n> count')
     print('3 k,n> list')
     mode = input('select mode: ')
