@@ -27,15 +27,15 @@ while 1:
         
         '''
         ax^2+BKx+CK=0
-        K(Bx+C)=ax^2
-        K=ax^2/(Bx+C)
+        K(Bx+C)=-ax^2
+        K=-ax^2/(Bx+C)
         '''
         
-        K = a*x**2/(B*x+C)
+        K = -a*x**2/(B*x+C)
         
-        if a*x**2 + B*K*x + C*K != 0: # idk if this ever happens
+        if round(a*x**2 + B*K*x + C*K, 5) != 0: # idk if this ever happens
             print('invalid solution')
-            print('ax^2+BKx+CK!=0')
+            print('ax^2+BKx+CK=' + str(round(a*x**2 + B*K*x + C*K, 5)))
         
         input('K=' + str(K))
 
@@ -62,16 +62,16 @@ while 1:
         
         '''
         AKx^2+bx+CK=0
-        AKx^2+CK=bx
-        K(Ax^2+C)=bx
-        K=bx/(Ax^2+C)
+        AKx^2+CK=-bx
+        K(Ax^2+C)=-bx
+        K=-bx/(Ax^2+C)
         '''
         
-        K = b*x/(A*x**2+C)
+        K = -b*x/(A*x**2+C)
 
-        if a*x**2 + B*K*x + C*K != 0: # idk if this ever happens
+        if round(A*K*x**2 + b*x + C*K, 5) != 0: # idk if this ever happens
             print('invalid solution')
-            print('ax^2 + BKx + CK != 0')
+            print('AKx^2+bx+CK=' + str(round(A*K*x**2 + b*x + C*K, 5)))
 
         input('K=' + str(K))
     
@@ -99,14 +99,14 @@ while 1:
         
         '''
         AKx^2+BKx+c=0
-        K(Ax^2+Bx)=c
-        K=c/(Ax^2+Bx)
+        K(Ax^2+Bx)=-c
+        K=-c/(Ax^2+Bx)
         '''
         
-        K = c/(A*x**2+B*x)
+        K = -c/(A*x**2+B*x)
 
-        if a*x**2 + B*K*x + C*K != 0: # idk if this ever happens
+        if round(A*K*x**2 + B*K*x + c, 5) != 0: # idk if this ever happens
             print('invalid solution')
-            print('ax^2 + BKx + CK != 0')
+            print('AKx^2+BKx+c=' + str(round(A*K*x**2 + B*K*x + c, 5)))
 
-        input('K=')
+        input('K=' + str(K))
