@@ -17,6 +17,12 @@ def polygon_side_from_radius(sides, radius):
 def polygon_side_from_apothem(sides, apothem):
     return (2 * apothem * math.tan(math.pi/sides), '2 apothem tan(pi/s)')
 
+def apothem_from_sides_side_length(sides, side_length):
+    return (side_length/(2*math.tan(math.pi/sides)), 'l/(2tan(pi/s))')
+
+def apothem_from_sides_outcircle(sides, circumradius):
+    return (circumradius*math.cos(math.pi/sides), 'R cos(pi/s)')
+
 def print_result(r):
     print('\n'.join(r[1:]))
     input('=' + str(r[0]))
@@ -27,7 +33,8 @@ while 1:
     print('3 s,l> area')
     print('4 s,r> side length')
     print('5 s,a> side length')
-    mode = input('select mode: ')
+    print('6 s,l> apothem')
+    mode = input('mode (more): ')
     if mode == '1':
         s = int(input('sides: '))
         print_result(internal_angle_sum(s))
@@ -48,8 +55,25 @@ while 1:
     
     elif mode == '5':
         s = int(input('sides: '))
-        a = int(input('apothem: '))
+        a = float(input('apothem: '))
         print_result(polygon_side_from_apothem(s, a))
+        
+    elif mode == '6':
+        s = int(input('Sides: '))
+        l = float(input('Side length: '))
+        print_result(apothem_from_sides_side_length(s, l))
+    
+    elif mode == '':
+        print('7 s,R> apothem')
+        mode = input('select mode: ')
+        if mode == '7':
+            s = int(input('Sides: '))
+            R = float(input('Circumradius: '))
+            print_result(apothem_from_sides_outcircle(s, R))
+        
+        else:
+            print('invalid mode')
+        
 
     else:
         print('invalid mode')
