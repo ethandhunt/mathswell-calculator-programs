@@ -17,5 +17,17 @@ while 1:
             count += 1
             primes.append(str(x)) # str conversion here
 
-    print('\n'.join(primes))
-    input('=' + str(count))
+    print('count=' + str(len(primes)))
+    
+    H = 6 # total vertical lines is 7
+    cancelled_flag = False
+    for x in range(len(primes)//H+1):
+        print('\n'.join(map(lambda x:str(x), primes[H*x:H*x+H])))
+        if x < len(primes)//H-1:
+            i = input(':')
+            if i != '':
+                cancelled_flag = True
+                break
+            
+    if len(primes) % 7 != 0 and not cancelled_flag:
+        input('.')
