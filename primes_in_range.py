@@ -29,5 +29,5 @@ while 1:
                 cancelled_flag = True
                 break
             
-    if len(primes) % 7 != 0 and not cancelled_flag:
+    if not cancelled_flag:
         input('.')

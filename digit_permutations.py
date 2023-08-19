@@ -31,11 +31,36 @@ def permutations(n_input):
 
 
 while 1:
-    print('1 k,n> count')
-    print('2 k,n> list')
+    print('1 <eval>,n> list')
+    print('2 k,n> count')
+    print('3 k,n> list')
     mode = input('select mode: ')
     
     if mode == '1':
+        print('all 12ab5')
+        condition = 'lambda x:' + input('Condition(x): ')
+        n_input = input('N:')
+        
+        n_permutations = [x for x in permutations(n_input) if eval(condition)(x)]
+        
+        if len(n_permutations) == 0:
+            input('none')
+            continue
+
+        H = 7
+        cancelled_flag = False
+        for x in range(len(n_permutations)//H+1):
+            print('\n'.join(map(lambda x:str(x), n_permutations[H*x:H*x+H])))
+            if x < len(n_permutations)//H-1:
+                i = input(':')
+                if i != '':
+                    cancelled_flag = True
+                    break
+                
+        if not cancelled_flag:
+            input('.')
+        
+    elif mode == '2':
         print('all 12ab5 div by k')
         k = int(input('Divisor: '))
         n_input = input('N: ')
@@ -47,7 +72,7 @@ while 1:
 
         input('c=' + str(c))
     
-    if mode == '2':
+    elif mode == '3':
         print('all 12ab5 div by k')
         k = int(input('Divisor: '))
         n_input = input('N: ')

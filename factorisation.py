@@ -59,5 +59,5 @@ while 1:
                     cancelled_flag = True
                     break
                 
-        if len(f) % 7 != 0 and not cancelled_flag:
+        if not cancelled_flag:
             input('.')
