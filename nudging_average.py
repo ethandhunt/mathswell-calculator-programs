@@ -35,7 +35,7 @@ while 1:
         n = k * o
 
         V = k*A + 2*A - n - v
-        input('V=' + str(v))
+        input('V=' + str(V))
     
     if mode == '2':
         o = float(input('Original avg: '))
