@@ -54,10 +54,14 @@ while 1:
         
         n_permutations = [x for x in permutations(n_input) if x % k == 0]
         H = 7
+        cancelled_flag = False
         for x in range(len(n_permutations)//H+1):
             print('\n'.join(map(lambda x:str(x), n_permutations[H*x:H*x+H])))
             if x < len(n_permutations)//H-1:
-                input(':')
+                i = input(':')
+                if i != '':
+                    cancelled_flag = True
+                    break
                 
-        if len(n_permutations) % 7 != 0:
+        if len(n_permutations) % 7 != 0 and not cancelled_flag:
             input('.')

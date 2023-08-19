@@ -37,7 +37,7 @@ while 1:
     if mode == '1':
         n = int(input('n: '))
         f = factors(n)
-        input(len(f))
+        input(len(f) + 1)
     
     elif mode == '2':
         n = int(input('n: '))
@@ -47,11 +47,17 @@ while 1:
     elif mode == '3':
         n = int(input('n: '))
         f = factors(n)
+        f.append([1, n])
+        
+        cancelled_flag = False
         H = 6 # total vertical lines is 7
         for x in range(len(f)//H+1):
             print('\n'.join(map(lambda x:str(x), f[H*x:H*x+H])))
             if x < len(f)//H-1:
-                input(':')
+                i = input(':')
+                if i != '':
+                    cancelled_flag = True
+                    break
                 
-        if len(f) % 7 != 0:
+        if len(f) % 7 != 0 and not cancelled_flag:
             input('.')
