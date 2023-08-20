@@ -15,7 +15,6 @@ while 1:
     for x in range(len(l)//H+1):
         print('\n'.join(map(lambda x:str(x), l[H*x:H*x+H])))
         if x < len(l)//H-1:
-            input(':')
             i = input(':')
             if i != '':
                 cancelled_flag = True
