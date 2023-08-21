@@ -7,7 +7,7 @@ while 1:
 
     input('count=' + str(math.ceil(high/k) - math.ceil(low/k)))
 
-    l = [x*k for x in range(math.ceil(low/k), math.ceil(high/k))] # ciel(heigh/k) might give edge cases
+    l = [x*k for x in range(math.ceil(low/k), math.ceil(high/k))] # ceil(heigh/k) might give edge cases
     # if you see this comment tell me I forgot to check the line above it
     
     cancelled_flag = False
