@@ -37,29 +37,59 @@ while 1:
     mode = input('mode (more): ')
     if mode == '1':
         s = int(input('sides: '))
+        if s == 0:
+            print('s=0 is invalid')
+            input('div by 0')
+            continue
+
         print_result(internal_angle_sum(s))
 
     elif mode == '2':
         s = int(input('sides: '))
+        if s == 0:
+            print('s=0 is unconstrained')
+            input('div by 0')
+            continue
+
         print_result(internal_angles(s))
 
     elif mode == '3':
         s = int(input('sides: '))
+        if s == 0:
+            print('s=0 is invalid')
+            input('div by 0')
+            continue
+
         l = float(input('side lengths: '))
         print_result(regular_polygon_area(s, l))
     
     elif mode == '4':
         s = int(input('sides: '))
+        if s == 0:
+            print('s=0 is invalid')
+            input('div by 0')
+            continue
+
         r = float(input('radius: '))
         print_result(polygon_side_from_radius(s, r))
     
     elif mode == '5':
         s = int(input('sides: '))
+        if s == 0:
+            print('s=0 is invalid')
+            input('div by 0')
+            continue
+
         a = float(input('apothem: '))
         print_result(polygon_side_from_apothem(s, a))
         
     elif mode == '6':
         s = int(input('Sides: '))
+        if s == 0:
+            print('s=0 is invalid')
+            input('div by 0')
+            continue
+
         l = float(input('Side length: '))
         print_result(apothem_from_sides_side_length(s, l))
     
@@ -68,6 +98,11 @@ while 1:
         mode = input('select mode: ')
         if mode == '7':
             s = int(input('Sides: '))
+            if s == 0:
+                print('s=0 is invalid')
+                input('div by 0')
+                continue
+
             R = float(input('Circumradius: '))
             print_result(apothem_from_sides_outcircle(s, R))
         

@@ -9,8 +9,27 @@ while 1:
     mode = input('select mode: ')
     if mode == '1':
         ab = float(input('ab='))
+        if ab == 0:
+            print('ab=0 is unconstrained')
+            print('b=sqrt(ab*bc/ac)=0')
+            print('a=ab/b')
+            input('div by 0')
+            continue
+
         bc = float(input('bc='))
+        if bc == 0:
+            print('bc=0 is unconstrained')
+            print('b=sqrt(ab*bc/ac)=0')
+            print('c = bc/b')
+            input('div by 0')
+            continue
+            
         ac = float(input('ca='))
+        if ac == 0:
+            print('ac=0 is unconstrained')
+            print('b=sqrt(ab*bc/ac)')
+            input('div by 0')
+            continue
 
         '''
         a = ab/b
@@ -56,6 +75,10 @@ while 1:
         r_a_b = input('a:b=')
         r_a, r_b = map(int, r_a_b.split(','))
         r_sum = r_a + r_b
+        if r_sum == 0:
+            print('ratio sums to 0')
+            input('unconstrained')
+            continue
         
         '''
         c=c_ka a
@@ -82,4 +105,6 @@ while 1:
             input('c=' + str(c))
         
         else:
+            print('MAX_ITER: ' + str(MAX_ITER))
+            print('passed max iterations')
             input('unable to solve')

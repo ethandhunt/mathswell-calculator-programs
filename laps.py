@@ -57,6 +57,12 @@ while 1:
     if mode == '1':
         A = float(input('A lap time: '))
         B = float(input('B lap time: '))
+        if B-A == 0:
+            print('B-A=0 is unconstrained')
+            print('ABo/(B-A)')
+            input('div by 0')
+            continue
+
         o = float(input('Overtakes: '))
         print('ABo/(B-A)')
         input('t=' + str(overtake_time_by_lap_times(A, B, o)))
@@ -64,6 +70,12 @@ while 1:
     if mode == '2':
         A = float(input('A lap time: '))
         B = float(input('B lap time: '))
+        if A-B == 0:
+            print('A-B=0 is unconstrained')
+            print('ceil(Bo/(A-B))')
+            input('div by 0')
+            continue
+        
         o = float(input('Overtakes: '))
         print('ceil(Bo/(A-B))')
         print('in A laps,')
@@ -72,6 +84,12 @@ while 1:
     if mode == '3':
         A = float(input('A lap time: '))
         B = float(input('B lap time: '))
+        if B-A == 0:
+            print('B-A=0 is unconstrained')
+            print('t=(AO+ABo)/(B-A)')
+            input('div by 0')
+            continue
+
         O = float(input('Time offset: '))
         o = float(input('Overtakes: '))
         input('t=' + overtake_time_by_lap_times_offset(A, B, O, o))
@@ -79,7 +97,19 @@ while 1:
     if mode == '4':
         a = float(input('A speed: '))
         b = float(input('B speed: '))
+        if b-a == 0:
+            print('b-a=0 is unconstrained')
+            print('t=(aO+abo)/(bL-aL)')
+            input('div by 0')
+            continue
+        
         L = float(input('Lap length: '))
+        if L == 0:
+            print('L=0 is unconstrained')
+            print('t=(aO+abo)/(bL-aL)')
+            input('div by 0')
+            continue
+        
         O = float(input('Offset dist: '))
         o = float(input('Overtakes: '))
         input('t=' + str(overtake_time_by_speed_lap_length_offset(a, b, L, O, o)))
