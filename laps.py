@@ -97,7 +97,6 @@ while 1:
         input('t=' + overtake_time_by_lap_times_offset(A, B, O, o))
         
     if mode == '4':
-        print('might be broken')
         a = float(input('A speed: '))
         b = float(input('B speed: '))
         if b-a == 0:
