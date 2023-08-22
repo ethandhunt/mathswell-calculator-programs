@@ -32,6 +32,7 @@ while 1:
     print('1 n> uniq fctr count')
     print('2 n> prime factors')
     print('3 n> unique factors')
+    print('4 n> prime exponents')
     mode = input('select mode: ')
     
     if mode == '1':
@@ -61,3 +62,27 @@ while 1:
                 
         if not cancelled_flag:
             input('.')
+    
+    if mode == '4':
+        n = int(input('n: '))
+        p = prime_factors(n)
+        printed_factors = []
+        f = []
+        for x in p:
+            if x in printed_factors: continue
+            f.append(str(x) + '^' + str(p.count(x)))
+            printed_factors.append(x)
+
+        cancelled_flag = False
+        H = 6 # total vertical lines is 7
+        for x in range(len(f)//H+1):
+            print('\n'.join(map(lambda x:str(x), f[H*x:H*x+H])))
+            if x < len(f)//H-1:
+                i = input(':')
+                if i != '':
+                    cancelled_flag = True
+                    break
+                
+        if not cancelled_flag:
+            input('.')
+            
