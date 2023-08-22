@@ -34,17 +34,19 @@ def overtake_time_by_lap_times_offset(A_lap_time, B_lap_time, offset_time, overt
 
 def overtake_time_by_speed_lap_length_offset(A_speed, B_speed, lap_length, offset_dist, overtakes):
     '''
-    A_laps = (t lap_length) / A_speed
-    B_laps = (t lap_length + offset) / B_speed
+    A_laps = (t A_speed) / lap_length
+    B_laps = (t B_speed + offset) / lap_length
     
     A_laps = B_laps + overtakes
     
-    (t lap_length) / A_speed = (t lap_length + offset) / B_speed + overtakes
-    B_speed t lap_length = A_speed t lap_length + A_speed offset + A_speed B_speed overtakes
-    t = (A_speed offset + A_speed B_speed overtakes) / (B_speed lap_length - A_speed lap_length)
+    ta/L = (tb+O)/L + o
+    at = bt+O+oL
+    at-bt = O+oL
+    t(a-b) = O+oL
+    t = (O+oL)/(a-b)
     '''
     
-    return (A_speed * offset_dist + A_speed * B_speed * overtakes) / (B_speed * lap_length - A_speed * lap_length)
+    return (offset_dist + overtakes * lap_length) / (A_speed - B_speed)
 
 while 1:
     print('1 A,B,o> ovrtk time')
@@ -95,6 +97,7 @@ while 1:
         input('t=' + overtake_time_by_lap_times_offset(A, B, O, o))
         
     if mode == '4':
+        print('might be broken')
         a = float(input('A speed: '))
         b = float(input('B speed: '))
         if b-a == 0:
